@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+
+
+    <h1>Turno de {{turno.getIdUsuario().getNombreCompleto()}}</h1>
+        
+    
+    <div class="col-sm-12">Tienda: {{turno.getIdTienda().getNombreTienda()}}</div>
+    <div class="col-sm-12">Fecha: {{turno.getFechaString()}}</div>
+    <div class="col-sm-12">Hora inicio: {{turno.getHoraInicioString()}}</div>
+    <div class="col-sm-12">Hora fin: {{turno.getHoraFinString()}}</div>
+    <div class="col-sm-12">Comentario: {{turno.getComentario()}}</div>
+    <br>
+    <div>
+            <button type="button" class="btn btn-default"><a href="/turno/editar/{{turno.getId()}}">Editar Turno</a></button>
+    </div>
+    <br>
+    <div>
+            <button type="button" class="btn btn-default"><a href="/turno/borrar/{{turno.getId()}}">Borrar Turno</a></button>
+    </div>
+  
+    
+
+{% endblock %}
+

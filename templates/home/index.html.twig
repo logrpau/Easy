@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% block stylesheets %}
+{{ parent() }}
+
+<link href="{{ asset('components/fullcalendar/dist/fullcalendar.css') }}" rel="stylesheet" />
+
+{% endblock %}
+
+<div class="container" >
+    <h1>+Easy</h1>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8" id='calendar'></div>
+    <div class="col-sm-2"></div>
+</div> 
+
+
+{% endblock %}
+{% block javascripts %}
+  {{ parent() }}
+  <script src="{{ asset('components/moment/moment.js') }}"></script>
+  <script src="{{ asset('components/fullcalendar/dist/fullcalendar.js') }}"></script>
+  <script src="{{ asset('js/fullcalendar-home.js') }}"></script>
+{% endblock %}

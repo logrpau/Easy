@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        
+        <title>
+            {% block title %}Easy{% endblock %}
+        </title>
+
+        {% block stylesheets %}
+            <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">           
+            <style>
+                body {
+                    background-image: url("{{ asset('images/bg-02.jpg')}}");
+                    background-repeat: no-repeat;
+                }
+            </style>
+        {% endblock %}
+
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">+Easy</a>
+                    </div>
+                    <ul class="nav navbar-nav">                    
+                        <li><a href="/turno">Turnos</a></li>
+                        <li><a href="/">Usuarios</a></li>
+                        <li><a href="/tienda">Tiendas</a></li>          
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">  
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/turno">Mi perfil <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Editar perfil</a></li>
+                                    <li><a href="/usuario/cambiarcontrasena">Cambiar contraseña</a></li> 
+                                    <li><a href="/logout">Logout <span class="glyphicon glyphicon-log-in"></span></a></li>                           
+                                </ul>
+                            </li>    
+                        
+                    </ul>
+                </div>
+            </nav>  
+        {% block body %}
+        
+        {% endblock %}
+            </div>
+        {% block javascripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>     
+            <script src="{{ asset('js/main.js') }}"></script>            
+        {% endblock %}
+    </body>
+</html>

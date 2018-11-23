@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<div class="container">
+    <h1>Tiendas actuales</h1>
+    <a href="/tienda/nueva"> Crea una tienda nueva </a>
+
+    {% for tienda in tiendas %}
+        <p> {{ tienda.getNombreTienda() }}</p>
+        <p> {{ tienda.getCalleTienda() }}</p>
+        <p><a href="/tienda/borrar/{{ tienda.getId() }}">borrar tienda</a></p>
+        <p><a href="/tienda/editar/{{ tienda.getId() }}">editar tienda</a></p>        
+    {% endfor %}
+
+    
+</div> 
+{% endblock %}
