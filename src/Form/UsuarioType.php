@@ -29,7 +29,7 @@ class UsuarioType extends AbstractType
                 'second_options' => array('label' => 'Repeat Password'),
             ))
             ->add('sueldo_por_hora', MoneyType::class)
-            ->add('is_admin', CheckboxType::class)
+            ->add('is_admin', CheckboxType::class, ['required'   => false])
         ;
     }
 

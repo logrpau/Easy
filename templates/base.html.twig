@@ -27,16 +27,19 @@
                     <div class="navbar-header">
                         <a class="navbar-brand" href="/">+Easy</a>
                     </div>
-                    <ul class="nav navbar-nav">                    
-                        <li><a href="/turno">Turnos</a></li>
+                    <ul class="nav navbar-nav">
+                    <li><a href="/turno">Turnos</a></li>
+                    {% if is_granted('ROLE_ADMIN') %}
                         <li><a href="/">Usuarios</a></li>
-                        <li><a href="/tienda">Tiendas</a></li>          
+                        <li><a href="/tienda">Tiendas</a></li>  
+                    {% endif %}
+                                
                     </ul>
                     <ul class="nav navbar-nav navbar-right">  
                             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/turno">Mi perfil <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Editar perfil</a></li>
-                                    <li><a href="/usuario/cambiarcontrasena">Cambiar contraseña</a></li> 
+                                    <li><a href="/cambiarcontrasena">Cambiar contraseña</a></li> 
                                     <li><a href="/logout">Logout <span class="glyphicon glyphicon-log-in"></span></a></li>                           
                                 </ul>
                             </li>    

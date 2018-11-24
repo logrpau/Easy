@@ -13,6 +13,12 @@ $( document ).ready(function() {
             error: function() {
               alert('there was an error while fetching events!');
             }
+          },
+          eventClick: function(event) {
+            if (event.id) {
+                window.location = 'turno/'+ event.id;
+              return false;
+            }
           }
         
         });

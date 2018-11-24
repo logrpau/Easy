@@ -19,9 +19,7 @@ class TurnoController extends AbstractController
      */
     public function index()
     {
-        return $this->render('turno/index.html.twig', [
-            'controller_name' => 'TurnoController',
-        ]);
+        return $this->render('turno/index.html.twig');
     }
 
     /**
@@ -42,6 +40,9 @@ class TurnoController extends AbstractController
      * @Route("/turno/nuevo", name="nuevo_turno")
      */
     public function crearTurno(Request $request) {
+
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
         // 1) build the form
         $turno = new Turno();
         $form = $this->createForm(TurnoType::class, $turno);
@@ -68,6 +69,8 @@ class TurnoController extends AbstractController
      */
     public function borrarTurno($id) {
 
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
         $entityManager = $this->getDoctrine()->getManager();
        
         $turno = $this->getDoctrine()
@@ -89,6 +92,8 @@ class TurnoController extends AbstractController
      * @Route("/turno/editar/{id}", name="editar_turno")
      */
     public function editarTurno($id,Request $request) {
+
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
         $entityManager = $this->getDoctrine()->getManager();       
         $turno = $entityManager

@@ -245,7 +245,7 @@ class Usuario implements UserInterface, \Serializable
     public function getRoles()
     {
         if ($this->getIsAdmin() === true) { 
-            return array('ROLE_ADMIN');
+            return array('ROLE_ADMIN', 'ROLE_USER');
         }
         else{ 
             return array('ROLE_USER');

@@ -118,7 +118,7 @@ class UsuarioController extends AbstractController
 
     
      /**
-     * @Route("/usuario/cambiarcontrasena", name="cambiar_contrasena")
+     * @Route("/cambiarcontrasena", name="cambiar_contrasena")
      */
     public function cambiarContrasena(Request $request,UserPasswordEncoderInterface $passwordEncoder) {
 
