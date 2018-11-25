@@ -11,9 +11,14 @@
 
 
     <h1>Mis turnos</h1>
-    <div>
-      <button type="button" class="btn btn-default"><a href="/turno/nuevo">Añadir turno</a></button>
-    </div>
+    <div class="col-sm-10"></div>
+        <button class="btn btn-dark col-sm-2" onClick="window.location = '/turno/nuevo'">
+                Añadir turno
+           </button>
+    <br>
+    <br>
+    <br>
+    <br>
     
     <div class="col-sm-2"></div>
     <div class="col-sm-8" id='calendar'></div>
@@ -30,6 +35,7 @@
 
 <script src="{{ asset('components/moment/moment.js') }}"></script>
 <script src="{{ asset('components/fullcalendar/dist/fullcalendar.js') }}"></script>
+<script src="{{ asset('components/fullcalendar/dist/locale/es.js') }}"></script>
 
 <script src="{{ asset('js/fullcalendar-functions.js') }}"></script>
 {% endblock %}

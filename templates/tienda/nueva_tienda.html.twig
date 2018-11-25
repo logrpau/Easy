@@ -1,12 +1,16 @@
 {% extends 'base.html.twig' %}
 
 
-{% block title %}Crear Tienda{% endblock %}
+{% block title %}{{ titulo }}{% endblock %}
 
 {% block body %}
 
-<div class="container">
-<h2>Nueva Tienda</h2>
+
+<h2>{{ titulo }}</h2>
+<br>
+<br>
+<br>
+<br>
 <div class="form-horizontal">
 {{ form_start(form) }}
    {{ form_errors(form) }}
@@ -24,9 +28,9 @@
     </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Guardar</button>
+        <button type="submit" class="btn btn-dark">Guardar</button>
       </div>
-    </div>
+
     
 {{ form_end(form) }}
 </div>

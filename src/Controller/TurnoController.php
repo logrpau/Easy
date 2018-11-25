@@ -102,7 +102,7 @@ class TurnoController extends AbstractController
         
         if (!$turno) {
             throw $this->createNotFoundException(
-                'El Turno no ha sido encontrada '
+                'El Turno no ha sido encontrado'
             );
         } 
         $form = $this->createForm(TurnoType::class, $turno);

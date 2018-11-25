@@ -24,8 +24,14 @@ class UsuarioController extends AbstractController
      */
     public function index()
     {
+        $repository = $this->getDoctrine()->getRepository(Usuario::class);
+        $usuarios = $repository->findAll();
+
         return $this->render('usuario/index.html.twig', [
-            'controller_name' => 'UsuarioController',
+           
+            'usuarios' => $usuarios
+            
+            
         ]);
     }
 
@@ -54,7 +60,8 @@ class UsuarioController extends AbstractController
         }
         return $this->render(
             'usuario/nuevo_usuario.html.twig',
-            array('form' => $form->createView())
+            ['form' => $form->createView(), 'titulo' => 'Nuevo Usuario']
+           
         );
     }
     
@@ -110,9 +117,9 @@ class UsuarioController extends AbstractController
         }
         return $this->render(
             'usuario/nuevo_usuario.html.twig',
-            array('form' => $form->createView())
+            ['form' => $form->createView(), 'titulo' => 'Editar Usuario']
         );
-            return $this->redirectToRoute('usuario');
+           
 
     }
 
@@ -155,8 +162,5 @@ class UsuarioController extends AbstractController
             'usuario/cambiar_contrasena.html.twig',
             array('form' => $form->createView())
         );
-           
-
-    }
-
+    } 
 }

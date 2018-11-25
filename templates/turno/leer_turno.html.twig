@@ -2,28 +2,45 @@
 
 {% block body %}
 
+   
 
-
-
-    <h1>Turno de {{turno.getIdUsuario().getNombreCompleto()}}</h1>
         
+                <h2>Turno de {{turno.getIdUsuario().getNombreCompleto()}}</h2>   
+                <br>
+                <br>
+
+                {% if is_granted('ROLE_ADMIN') %}
+                
+                <div class="col-sm-12" style="display: flex; justify-content: flex-end">
+                <button style="margin-right: 4px" type="button" class="btn btn-dark" onClick="window.location = '/turno/editar/{{turno.getId()}}'"><span class="glyphicon glyphicon-pencil"></span></span></button>
+                <button type="button" class="btn btn-dark" onClick="window.location = '/turno/borrar/{{turno.getId()}}'"><span class="glyphicon glyphicon-trash"></span></button>
+                </div>  
+                <br>
+                <br>
+                <br>
+                <br>
+                {% endif %}
+
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4 rounded-box">
+                        <div class="col-sm-6 text-center"><strong>Tienda:</strong></div>
+                        <div class="col-sm-6 text-center">{{turno.getIdTienda().getNombreTienda()}}  </div> 
+
+                        <div class="col-sm-6 text-center"><strong>Fecha:</strong></div>
+                        <div class="col-sm-6 text-center">{{turno.getFechaString()}}  </div>
+
+                        <div class="col-sm-6 text-center"><strong>Hora inicio:</strong></div>
+                        <div class="col-sm-6 text-center">{{turno.getHoraInicioString()}}  </div>
+
+                        <div class="col-sm-6 text-center"><strong>Hora fin:</strong></div>
+                        <div class="col-sm-6 text-center">{{turno.getHoraFinString()}}  </div>
+
+                        <div class="col-sm-6 text-center"><strong>Comentario:</strong></div>
+                        <div class="col-sm-6 text-center">{{turno.getComentario()}}  </div>
+                </div>        
+                <div class="col-sm-4"></div>              
     
-    <div class="col-sm-12">Tienda: {{turno.getIdTienda().getNombreTienda()}}</div>
-    <div class="col-sm-12">Fecha: {{turno.getFechaString()}}</div>
-    <div class="col-sm-12">Hora inicio: {{turno.getHoraInicioString()}}</div>
-    <div class="col-sm-12">Hora fin: {{turno.getHoraFinString()}}</div>
-    <div class="col-sm-12">Comentario: {{turno.getComentario()}}</div>
-    <br>
-    {% if is_granted('ROLE_ADMIN') %}
-    <div>
-            <button type="button" class="btn btn-default"><a href="/turno/editar/{{turno.getId()}}">Editar Turno</a></button>
-    </div>
-    <br>
-    <div>
-            <button type="button" class="btn btn-default"><a href="/turno/borrar/{{turno.getId()}}">Borrar Turno</a></button>
-    </div>
-  
-        {% endif %}
+    
 
 {% endblock %}
 

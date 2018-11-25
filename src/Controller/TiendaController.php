@@ -44,7 +44,7 @@ class TiendaController extends AbstractController
         }
         return $this->render(
             'tienda/nueva_tienda.html.twig',
-            array('form' => $form->createView())
+            ['form' => $form->createView(), 'titulo' => 'Nueva Tienda']
         );
     }
 
@@ -99,9 +99,10 @@ class TiendaController extends AbstractController
         }
         return $this->render(
             'tienda/nueva_tienda.html.twig',
-            array('form' => $form->createView())
+            ['form' => $form->createView(), 'titulo' => 'Editar Tienda']
+           
         );
-            return $this->redirectToRoute('tienda');
+            
 
     }
 

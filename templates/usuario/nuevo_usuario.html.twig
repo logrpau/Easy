@@ -1,12 +1,16 @@
 {% extends 'base.html.twig' %}
 
 
-{% block title %}Register{% endblock %}
+{% block title %}{{ titulo }}{% endblock %}
 
 {% block body %}
 
-<div class="container">
-<h2>Regístrate</h2>
+
+<h2>{{ titulo }}</h2>
+<br>
+<br>
+<br>
+<br>
 <div class="form-horizontal">
 {{ form_start(form) }}
    {{ form_errors(form) }}
@@ -69,5 +73,5 @@
     
 {{ form_end(form) }}
 </div>
-</div>
+
 {% endblock %}
