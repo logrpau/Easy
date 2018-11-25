@@ -9,15 +9,17 @@ class ChangePassword
 {
     /**
      * @SecurityAssert\UserPassword(
-     *     message = "Wrong value for your current password"
+     *     message = "Contraseña actual incorrecta"
      * )
      */
      private $oldPassword;
 
     /**
-     * @Assert\Length(
-     *     min = 6,
-     *     minMessage = "Password should by at least 6 chars long"
+     *@Assert\Length(
+     *      min = 6,
+     *      max = 30,
+     *      minMessage = "La contraseña debe tener mínimo {{ limit }} caracteres",
+     *      maxMessage = "La logitud de la contraseña no puede ser mayor a {{ limit }} caracteres"
      * )
      */
      private $newPassword;

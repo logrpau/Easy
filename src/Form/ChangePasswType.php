@@ -27,7 +27,7 @@ class ChangePasswType extends AbstractType
                 'first_options'  => array('label' => 'Password'),
                 'second_options' => array('label' => 'Repeat Password'),
             ))
-            ->add('save', SubmitType::class)
+            ->add('Guardar', SubmitType::class)
            
         ;
     }

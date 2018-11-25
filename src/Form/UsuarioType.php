@@ -10,7 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\TelType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
@@ -21,12 +21,13 @@ class UsuarioType extends AbstractType
         $builder
             ->add('nombre_completo', TextType::class)
             ->add('correo_electronico', EmailType::class)
-            ->add('numero_telefono', TextType::class)           
+            ->add('numero_telefono', NumberType::class)           
             ->add('username', TextType::class)
             ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
                 'first_options'  => array('label' => 'Password'),
                 'second_options' => array('label' => 'Repeat Password'),
+                'required'   => false,
             ))
             ->add('sueldo_por_hora', MoneyType::class)
             ->add('is_admin', CheckboxType::class, ['required'   => false])

@@ -13,7 +13,12 @@
 <br>
 <div class="form-horizontal">
 {{ form_start(form) }}
-   {{ form_errors(form) }}
+{{ form_errors(form.nombre_completo)}}
+{{ form_errors(form.correo_electronico)}}
+{{ form_errors(form.numero_telefono)}}
+{{ form_errors(form.username)}}
+{{ form_errors(form.sueldo_por_hora)}}
+{{ form_errors(form.plainPassword.first)}}
     <div class="form-group">
         <div class="control-label col-sm-2">{{ form_label(form.nombre_completo,'Nombre y Apellidos') }}</div>
         <div class="col-sm-10">
@@ -67,7 +72,7 @@
 
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Enviar</button>
+        <button type="submit" class="btn btn-dark">Enviar</button>
       </div>
     </div>
     

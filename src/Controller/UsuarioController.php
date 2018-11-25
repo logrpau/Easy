@@ -90,7 +90,7 @@ class UsuarioController extends AbstractController
     /**
      * @Route("/usuario/editar/{id}", name="editar_usuario")
      */
-    public function editarUsuario($id,Request $request) {
+    public function editarUsuario($id,Request $request,UserPasswordEncoderInterface $passwordEncoder) {
 
         $entityManager = $this->getDoctrine()->getManager();       
         $usuario = $entityManager
@@ -110,7 +110,13 @@ class UsuarioController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             // 4) save the Usuario!
+            if (!empty($plainPassword)){
+                $password = $passwordEncoder->encodePassword($usuario, $usuario->getPlainPassword());
+                $usuario->setPassword($password);
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($usuario);
             $entityManager->flush();            
 
             return $this->redirectToRoute('usuario');
@@ -160,7 +166,7 @@ class UsuarioController extends AbstractController
         }
         return $this->render(
             'usuario/cambiar_contrasena.html.twig',
-            array('form' => $form->createView())
+            ['form' => $form->createView()]
         );
     } 
 }
