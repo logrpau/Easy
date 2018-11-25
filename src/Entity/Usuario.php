@@ -10,6 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UsuarioRepository")
  * @UniqueEntity(fields="correo_electronico", message="Email ya existe! Prueba con otro")
@@ -54,9 +55,15 @@ class Usuario implements UserInterface, \Serializable
      */
     private $sueldo_por_hora;
 
+    
     /**
      * @Assert\NotBlank()
-     * @Assert\Length(max=4096)
+     * @Assert\Length(
+     *      min = 6,
+     *      max = 30,
+     *      minMessage = "La contraseña debe tener mínimo {{ limit }} caracteres",
+     *      maxMessage = "La logitud de la contraseña no puede ser mayor a {{ limit }} caracteres"
+     * )
      */
     private $plainPassword;
 
