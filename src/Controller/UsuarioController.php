@@ -110,8 +110,9 @@ class UsuarioController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             // 4) save the Usuario!
-            if (!empty($plainPassword)){
-                $password = $passwordEncoder->encodePassword($usuario, $usuario->getPlainPassword());
+            $plainpassword = $usuario->getPlainPassword();
+            if (!empty($plainpassword)){
+                $password = $passwordEncoder->encodePassword($usuario, $plainpassword);
                 $usuario->setPassword($password);
             }
 
