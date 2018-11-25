@@ -52,7 +52,7 @@ CREATE TABLE `tienda` (
   `nombre_tienda` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `calle_tienda` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,7 +84,7 @@ CREATE TABLE `turno` (
   KEY `IDX_E7976762998FD161` (`id_tienda_id`),
   CONSTRAINT `FK_E79767627EB2C349` FOREIGN KEY (`id_usuario_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE,
   CONSTRAINT `FK_E7976762998FD161` FOREIGN KEY (`id_tienda_id`) REFERENCES `tienda` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +116,7 @@ CREATE TABLE `usuario` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_2265B05DF85E0677` (`username`),
   UNIQUE KEY `UNIQ_2265B05DAE7A59DA` (`correo_electronico`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,7 +125,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (8,'admin','Admin','0','admin@easy.com',0,'$2y$13$CCY8dV6wiX0BHRSxHMtuieGzNG7y7NgJLNLw3s7p6.8w.D3VhxTqi',1,'N;');
+INSERT INTO `usuario` VALUES (1,'admin','Admin','0','admin@easy.com',0,'$2y$13$CCY8dV6wiX0BHRSxHMtuieGzNG7y7NgJLNLw3s7p6.8w.D3VhxTqi',1,'N;');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
