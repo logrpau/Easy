@@ -10,6 +10,7 @@
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "*",
         "symfony/console": "*",
+        "symfony/dotenv": "*",
         "symfony/flex": "^1.1",
         "symfony/form": "*",
         "symfony/framework-bundle": "*",
@@ -21,7 +22,6 @@
         "symfony/yaml": "*"
     },
     "require-dev": {
-        "symfony/dotenv": "*",
         "symfony/profiler-pack": "^1.0",
         "symfony/web-server-bundle": "*"
     },
